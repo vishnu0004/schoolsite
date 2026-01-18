@@ -1,0 +1,41 @@
+<!-- GALLERY HERO -->
+<section class="gallery-hero" style="padding-top: 180px;">
+  <div class="container text-center">
+    <h1 class="hero-title">Our Gallery</h1>
+    <p class="hero-text">Explore the moments and memories from Sandi Public School</p>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let img of galleryImages">
+        <div class="gallery-card">
+          <img
+            [src]="img"
+            alt="Gallery Image"
+            class="gallery-img"
+            data-bs-toggle="modal"
+            data-bs-target="#lightboxModal"
+            (click)="openLightbox(img)"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body text-center">
+        <img [src]="selectedImage" alt="Gallery Image" class="img-fluid rounded">
+      </div>
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
